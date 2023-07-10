@@ -1,0 +1,21 @@
+# Runs Nginx2, Flask2, Nomad2, Consul2
+
+version: "1.0"
+
+services:
+    
+  nginx2:
+    build: ribanerjee.azurecr.io/nginx
+    container_name: nginx
+    restart: always
+    ports:
+      - "80:80"
+
+  flask2:
+    build: ribanerjee.azurecr.io/flask
+    container_name: flask
+    restart: always
+    environment:
+      - APP_NAME=MyFlaskApp
+    expose:
+      - 8080

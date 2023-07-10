@@ -1,0 +1,30 @@
+# Runs Jenkins server and MySQL server
+# Run the Jenkins portal at 8080. Jenkins uses Tomcat server which runs on 8080.
+# Port 50000 is used for Jenkins master slave communication.
+
+version: '1.0'
+
+services:
+  jenkins:
+    image: jenkins/jenkins:lts
+    ports: 
+      - 8080:8080
+      - 50000:50000
+    volumes:
+      - jenkins_home:/var/jenkins_home
+
+  mysql2:
+    build: mysql:latest
+    container_name: mysql
+    restart: always
+    environment:
+      - MYSQL_DATABASE=InfosysBtData
+      - MYSQL_USER=ribanerjee
+      - MYSQL_PASSWORD=test1234
+      - MYSQL_ROOT_PASSWORD=test1234
+    ports:
+      - "3306:3306"
+
+volumes:
+  jenkins_home:
+

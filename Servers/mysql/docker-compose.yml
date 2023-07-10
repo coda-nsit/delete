@@ -1,0 +1,18 @@
+# Runs Kafka and MySQL
+
+version: "1.0"
+
+services:
+
+  mysql1:
+    build: mysql:latest
+    container_name: mysql
+    restart: always
+    environment:
+      - MYSQL_DATABASE=InfosysBtData
+      - MYSQL_USER=ribanerjee
+      - MYSQL_PASSWORD=test1234
+      - MYSQL_ROOT_PASSWORD=test1234
+    ports:
+      - "3306:3306"
+
