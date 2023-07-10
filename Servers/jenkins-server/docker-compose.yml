@@ -6,7 +6,7 @@ version: '1.0'
 
 services:
   jenkins:
-    image: jenkins/jenkins:lts
+    image: ../../Jenkins
     ports: 
       - 8080:8080
       - 50000:50000
@@ -14,7 +14,7 @@ services:
       - jenkins_home:/var/jenkins_home
 
   mysql2:
-    build: mysql:latest
+    build: ../../MySql
     container_name: mysql
     restart: always
     environment:
