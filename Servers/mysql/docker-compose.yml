@@ -5,7 +5,7 @@ version: "1.0"
 services:
 
   mysql1:
-    build: mysql:latest
+    build: ../../MySql
     container_name: mysql
     restart: always
     environment:
