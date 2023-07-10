@@ -1,18 +1,18 @@
-# Runs Nginx2, Flask2, Nomad2, Consul2
+# Runs Nginx1, Flask1, Nomad1, Consul1
 
 version: "1.0"
 
 services:
     
   nginx2:
-    build: ribanerjee.azurecr.io/nginx
+    build: ../../Webserver
     container_name: nginx
     restart: always
     ports:
       - "80:80"
 
   flask2:
-    build: ribanerjee.azurecr.io/flask
+    build: ../../Flask
     container_name: flask
     restart: always
     environment:
