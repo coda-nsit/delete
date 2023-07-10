@@ -5,14 +5,14 @@ version: "1.0"
 services:
     
   nginx1:
-    build: ../../Webserver
+    image: ribanerjee.azurecr.io/nginx:1.0
     container_name: nginx
     restart: always
     ports:
       - "80:80"
 
   flask1:
-    build: ../../Flask
+    image: ribanerjee.azurecr.io/flask:latest
     container_name: flask
     restart: always
     environment:
